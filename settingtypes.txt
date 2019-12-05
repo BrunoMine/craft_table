@@ -1,0 +1,10 @@
+# Settings Applicable by GUI
+# Configurações aplicaveis para o menu gráfico
+
+# Set 2x2 craft grid on player inventory.
+#
+# Define grade de craft 2x2 no inventario do jogador.
+craft_table_2x2_craft_grid_to_players (2x2 Craft Grid to players) bool true
+
+
+
