@@ -1,0 +1,20 @@
+{
+    "name": "craft_table",
+    "description": "Add Craft Table for Minetest",
+    "keywords": [
+        "craft_table",
+        "workbench",
+        "crafting",
+        "hardcore",
+        "craft_grid",
+        "craft"
+    ],
+    "homepage": "https://github.com/BrunoMine/craft_table",
+    "forum": "https://forum.minetest.net/viewtopic.php?t=1",
+    "screenshots": [
+        "https://example.com/screenshot1.png"
+    ],
+    "authors": [
+        "BrunoMine"
+    ]
+}
