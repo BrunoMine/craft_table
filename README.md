@@ -1,7 +1,7 @@
 Craft Table no-version
 ======================
 
-[![Download](https://img.shields.io/github/tag/BrunoMine/hardtorch.svg?style=flat-square&label=release)](https://github.com/BrunoMine/craft_table/archive/master.zip)
+[![Download](https://img.shields.io/github/tag/BrunoMine/craft_table.svg?style=flat-square&label=release)](https://github.com/BrunoMine/craft_table/archive/master.zip)
 [![Project](https://img.shields.io/badge/Git-Project-green.svg)](https://github.com/BrunoMine/craft_table)
 [![!Bower](https://img.shields.io/badge/Bower-Project-green.svg)](https://minetest-bower.herokuapp.com/mods/craft_table)
 [![License](https://img.shields.io/badge/License-LGPL_v3.0-blue.svg)](https://github.com/BrunoMine/craft_table/blob/master/LICENSE.txt)
