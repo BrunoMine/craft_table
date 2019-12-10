@@ -1,5 +1,5 @@
-Craft Table sem-versao
-======================
+Craft Table 1.0.0
+=================
 
 [![Baixar](https://img.shields.io/github/tag/BrunoMine/craft_table.svg?style=flat-square&label=release)](https://github.com/BrunoMine/craft_table/archive/master.zip)
 [![Projeto](https://img.shields.io/badge/Git-Projeto-green.svg)](https://github.com/BrunoMine/craft_table)

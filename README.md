@@ -1,5 +1,5 @@
-Craft Table no-version
-======================
+Craft Table 1.0.0
+=================
 
 [![Download](https://img.shields.io/github/tag/BrunoMine/craft_table.svg?style=flat-square&label=release)](https://github.com/BrunoMine/craft_table/archive/master.zip)
 [![Project](https://img.shields.io/badge/Git-Project-green.svg)](https://github.com/BrunoMine/craft_table)
