@@ -9,7 +9,7 @@ Craft Table 1.0.0
 Este mod vai tornar as tochas muito mais realistas.
 
 ## Requisitos
-* Minetest 0.4.16 (ou superior)
+* Minetest 5.1.0 (ou superior)
 * Mod default
 
 ## Mods suportados
