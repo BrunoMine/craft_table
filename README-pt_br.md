@@ -4,6 +4,7 @@ Craft Table 1.0.0
 [![Baixar](https://img.shields.io/github/tag/BrunoMine/craft_table.svg?style=flat-square&label=release)](https://github.com/BrunoMine/craft_table/archive/master.zip)
 [![Projeto](https://img.shields.io/badge/Git-Projeto-green.svg)](https://github.com/BrunoMine/craft_table)
 [![!Bower](https://img.shields.io/badge/Bower-Projeto-green.svg)](https://minetest-bower.herokuapp.com/mods/craft_table)
+[![Forum](https://img.shields.io/badge/minetest-mod-green.svg?style=flat-square)](https://forum.minetest.net/viewtopic.php?f=9&t=23771)
 [![Licença](https://img.shields.io/badge/Licença-LGPL_v3.0-blue.svg)](https://github.com/BrunoMine/hardtorch/blob/master/LICENSE.txt)
 
 Este mod vai tornar as tochas muito mais realistas.
