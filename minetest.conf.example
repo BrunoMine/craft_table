@@ -1,0 +1,7 @@
+# This file contains settings of Craft_Table Mod that can be changed in minetest.conf
+# Esse arquivo contem configurações do Mod Craft_Table que podem ser a mudadas em minetest.conf
+
+# Set 2x2 craft grid on player inventory.
+# Define grade de craft 2x2 no inventario do jogador.
+#craft_table_2x2_craft_grid_to_players = true
+
