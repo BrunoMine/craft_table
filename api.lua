@@ -98,6 +98,7 @@ minetest.register_allow_player_inventory_action(function(player, action, invento
 		
 		-- Close formspec when table is destroyed
 		if (inventory_info.to_list == "craft" or inventory_info.from_list == "craft")
+			and meta:get_string("craft_table:craft_table_grid") ~= "2x2"
 			and check_craft_table(player) == false 
 		then
 			minetest.close_formspec(player:get_player_name(), "craft_table:craft_table")
