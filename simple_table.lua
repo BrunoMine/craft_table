@@ -38,7 +38,7 @@ end
 
 -- Craft Table recipe (classic from MC)
 minetest.register_craft({ 
-	output = 'craft_table:craft_table',
+	output = 'craft_table:simple',
 	recipe = {
 		{'group:wood', 'group:wood'},
 		{'group:wood', 'group:wood'},
