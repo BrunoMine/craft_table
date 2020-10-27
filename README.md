@@ -10,7 +10,7 @@ Craft Table 1.0.0
 Add Craft Table for Minetest
 
 ## Requirements
-* Minetest 5.1.0 (or later)
+* Minetest 5.3.0 (or later)
 * default mod
 
 ## Supported mods
