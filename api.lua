@@ -1,6 +1,6 @@
 --[[
 	Mod Craft Table for Minetest
-	Copyright (C) 2019 BrunoMine (https://github.com/BrunoMine)
+	Copyright (C) 2020 BrunoMine (https://github.com/BrunoMine)
 	
 	You should have received a copy of the GNU General Public License
 	along with this program.  If not, see <https://www.gnu.org/licenses/>.
@@ -81,7 +81,6 @@ minetest.register_allow_player_inventory_action(function(player, action, invento
 	if action == "move" then
 		
 		local meta = player:get_meta()
-		
 		-- Avoid put itens at extra slots from 2x2 craft grid
 		if inventory_info.to_list == "craft" 
 			and meta:get_string("craft_table:craft_table_grid") == "2x2"
@@ -133,14 +132,14 @@ if sfinv then
 				image[4,1.5;1,1;gui_furnace_arrow_bg.png^[transformR270]
 				listring[current_player;main]
 				listring[current_player;craft]
-				image[0,4.7;1,1;gui_hb_bg.png]
-				image[1,4.7;1,1;gui_hb_bg.png]
-				image[2,4.7;1,1;gui_hb_bg.png]
-				image[3,4.7;1,1;gui_hb_bg.png]
-				image[4,4.7;1,1;gui_hb_bg.png]
-				image[5,4.7;1,1;gui_hb_bg.png]
-				image[6,4.7;1,1;gui_hb_bg.png]
-				image[7,4.7;1,1;gui_hb_bg.png]
+				image[0,5.2;1,1;gui_hb_bg.png]
+				image[1,5.2;1,1;gui_hb_bg.png]
+				image[2,5.2;1,1;gui_hb_bg.png]
+				image[3,5.2;1,1;gui_hb_bg.png]
+				image[4,5.2;1,1;gui_hb_bg.png]
+				image[5,5.2;1,1;gui_hb_bg.png]
+				image[6,5.2;1,1;gui_hb_bg.png]
+				image[7,5.2;1,1;gui_hb_bg.png]
 			]], true)
 		end
 	end
@@ -160,4 +159,8 @@ if sfinv then
 	end
 	
 	sfinv.override_page("sfinv:crafting", override_table)
+	
+	minetest.register_on_joinplayer(function(player)
+		player:get_meta():set_string("craft_table:craft_table_grid", "2x2")
+	end)
 end
