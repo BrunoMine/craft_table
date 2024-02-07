@@ -3,7 +3,7 @@
 	Copyright (C) 2019 BrunoMine (https://github.com/BrunoMine)
 	
 	You should have received a copy of the GNU General Public License
-	along with this program.  If not, see <https://www.gnu.org/licenses/>.
+	along with this program. If not, see <https://www.gnu.org/licenses/>.
 	
 	Simple craft table
   ]]
@@ -26,7 +26,7 @@ if minetest.registered_nodes["xdecor:workbench"] then
 	-- Remove old recipe
 	minetest.clear_craft({output = 'xdecor:workbench'})
 	-- Register new recipe
-	minetest.register_craft({ 
+	minetest.register_craft({
 		output = 'xdecor:workbench',
 		recipe = {
 			{'', 'group:wood', ''},
@@ -37,7 +37,7 @@ if minetest.registered_nodes["xdecor:workbench"] then
 end
 
 -- Craft Table recipe (classic from MC)
-minetest.register_craft({ 
+minetest.register_craft({
 	output = 'craft_table:simple',
 	recipe = {
 		{'group:wood', 'group:wood'},

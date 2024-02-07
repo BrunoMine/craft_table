@@ -10,13 +10,13 @@
 
 
 -- Drop residual items from craft list
-local function drop_craft(player, pos) 
+local function drop_craft(player, pos)
 	local invref = player:get_inventory()
 	if not pos then pos = player:get_pos() end
 	local size = invref:get_size("craft")
 	for i = 1, size do
 		local item = invref:get_stack("craft", i)
-		if item ~= nil then 
+		if item ~= nil then
 			minetest.env:add_item({x = pos.x + (((math.random(1, 70)/100)-0.35)), y = pos.y+1, z = pos.z + (((math.random(1, 70)/100)-0.35))}, item)
 		end
 		invref:set_stack("craft", i, '')
@@ -24,7 +24,7 @@ local function drop_craft(player, pos)
 end
 
 -- Formspec for craft table
-local craft_table_form = 
+local craft_table_form =
 	"size[8,8.3]"..
 	default.gui_bg..
 	default.gui_bg_img..
@@ -86,7 +86,7 @@ minetest.register_allow_player_inventory_action(function(player, action, invento
 		
 		local meta = player:get_meta()
 		-- Avoid put itens at extra slots from 2x2 craft grid
-		if inventory_info.to_list == "craft" 
+		if inventory_info.to_list == "craft"
 			and meta:get_string("craft_table:craft_table_grid") == "2x2"
 		and (
 				inventory_info.to_index == 3
@@ -102,7 +102,7 @@ minetest.register_allow_player_inventory_action(function(player, action, invento
 		-- Close formspec when table is destroyed
 		if (inventory_info.to_list == "craft" or inventory_info.from_list == "craft")
 			and meta:get_string("craft_table:craft_table_grid") ~= "2x2"
-			and check_craft_table(player) == false 
+			and check_craft_table(player) == false
 		then
 			minetest.close_formspec(player:get_player_name(), "craft_table:craft_table")
 			drop_craft(player)
@@ -115,7 +115,7 @@ end)
 
 minetest.register_craft_predict(function(itemstack, player, old_craft_grid, craft_inv)
 	if player:get_meta():get_string("craft_table:craft_table_grid") ~= "2x2"
-		and check_craft_table(player) == false 
+		and check_craft_table(player) == false
 	then
 		return ''
 	end
