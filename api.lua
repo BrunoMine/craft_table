@@ -54,11 +54,13 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 		local meta = player:get_meta()
 		drop_craft(player, minetest.deserialize(meta:get_string("craft_table:craft_table_pos")))
 		meta:set_string("craft_table:craft_table_pos", "")
+		meta:set_string("craft_table:craft_table_grid", "2x2")
 	end
 end)
 
 -- Check craft table
 local check_craft_table = function(player)
+
 	local meta = player:get_meta()
 	if meta:get_string("craft_table:craft_table_pos") == ""
 		or meta:get_string("craft_table:craft_table_node") == ""
