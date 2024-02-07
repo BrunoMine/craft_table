@@ -34,6 +34,8 @@ local craft_table_form =
 	"list[current_player;craft;1.75,0.5;3,3;]"..
 	"image[4.85,1.45;1,1;gui_furnace_arrow_bg.png^[transformR270]"..
 	"list[current_player;craftpreview;5.75,1.5;1,1;]"..
+	"listring[current_player;main]"..
+	"listring[current_player;craft]"..
 	default.get_hotbar_bg(0,4.25)
 
 -- On_rightclick callback for craft tables
