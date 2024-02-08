@@ -3,28 +3,28 @@
 	Copyright (C) 2020 BrunoMine (https://github.com/BrunoMine)
 	
 	You should have received a copy of the GNU General Public License
-	along with this program.  If not, see <https://www.gnu.org/licenses/>.
+	along with this program. If not, see <https://www.gnu.org/licenses/>.
 	
 	API
   ]]
 
 
 -- Drop residual items from craft list
-local function drop_craft(player, pos) 
+local function drop_craft(player, pos)
 	local invref = player:get_inventory()
 	if not pos then pos = player:get_pos() end
 	local size = invref:get_size("craft")
 	for i = 1, size do
 		local item = invref:get_stack("craft", i)
-		if item ~= nil then 
-			minetest.env:add_item({x = pos.x + (((math.random(1, 70)/100)-0.35)), y = pos.y+1, z = pos.z + (((math.random(1, 70)/100)-0.35))}, item)
+		if item ~= nil then
+			minetest.add_item({x = pos.x + (((math.random(1, 70)/100)-0.35)), y = pos.y+1, z = pos.z + (((math.random(1, 70)/100)-0.35))}, item)
 		end
 		invref:set_stack("craft", i, '')
 	end
 end
 
 -- Formspec for craft table
-local craft_table_form = 
+local craft_table_form =
 	"size[8,8.3]"..
 	default.gui_bg..
 	default.gui_bg_img..
@@ -34,6 +34,8 @@ local craft_table_form =
 	"list[current_player;craft;1.75,0.5;3,3;]"..
 	"image[4.85,1.45;1,1;gui_furnace_arrow_bg.png^[transformR270]"..
 	"list[current_player;craftpreview;5.75,1.5;1,1;]"..
+	"listring[current_player;main]"..
+	"listring[current_player;craft]"..
 	default.get_hotbar_bg(0,4.25)
 
 -- On_rightclick callback for craft tables
@@ -52,11 +54,13 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 		local meta = player:get_meta()
 		drop_craft(player, minetest.deserialize(meta:get_string("craft_table:craft_table_pos")))
 		meta:set_string("craft_table:craft_table_pos", "")
+		meta:set_string("craft_table:craft_table_grid", "2x2")
 	end
 end)
 
 -- Check craft table
 local check_craft_table = function(player)
+
 	local meta = player:get_meta()
 	if meta:get_string("craft_table:craft_table_pos") == ""
 		or meta:get_string("craft_table:craft_table_node") == ""
@@ -82,7 +86,7 @@ minetest.register_allow_player_inventory_action(function(player, action, invento
 		
 		local meta = player:get_meta()
 		-- Avoid put itens at extra slots from 2x2 craft grid
-		if inventory_info.to_list == "craft" 
+		if inventory_info.to_list == "craft"
 			and meta:get_string("craft_table:craft_table_grid") == "2x2"
 		and (
 				inventory_info.to_index == 3
@@ -98,7 +102,7 @@ minetest.register_allow_player_inventory_action(function(player, action, invento
 		-- Close formspec when table is destroyed
 		if (inventory_info.to_list == "craft" or inventory_info.from_list == "craft")
 			and meta:get_string("craft_table:craft_table_grid") ~= "2x2"
-			and check_craft_table(player) == false 
+			and check_craft_table(player) == false
 		then
 			minetest.close_formspec(player:get_player_name(), "craft_table:craft_table")
 			drop_craft(player)
@@ -111,7 +115,7 @@ end)
 
 minetest.register_craft_predict(function(itemstack, player, old_craft_grid, craft_inv)
 	if player:get_meta():get_string("craft_table:craft_table_grid") ~= "2x2"
-		and check_craft_table(player) == false 
+		and check_craft_table(player) == false
 	then
 		return ''
 	end

@@ -5,6 +5,3 @@
 #
 # Define grade de craft 2x2 no inventario do jogador.
 craft_table_2x2_craft_grid_to_players (2x2 Craft Grid to players) bool true
-
-
-
